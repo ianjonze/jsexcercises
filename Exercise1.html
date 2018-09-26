@@ -34,8 +34,8 @@
 
 <body>
 	
-<p>Today is <span id="day"></span> <br>
-The current time is <span id="hour"> </span></p>
+<p>Today is <span id="day"></span> <br> The current time is <span id="hour"> </span>
+</p>
 
 <script>
 	const NOON = 12;
@@ -53,7 +53,6 @@ The current time is <span id="hour"> </span></p>
 	// Returns 12 Hour Clock 
 	
 	let clock = (hour < NOON ? hour: hour - NOON);
-	
 	
 	document.getElementById("day").innerHTML = days[day];
 	document.getElementById("hour").innerHTML = clock + ":" +  minute  + "<small>" + ampm + "</small>";
