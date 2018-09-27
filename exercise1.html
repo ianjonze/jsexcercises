@@ -8,7 +8,8 @@
 </head>
 
 <style type="text/css">
-	body{
+
+	body {
 		background: rgb(77,77,77);
 		background: radial-gradient(circle, rgba(77,77,77,1) 0%, rgba(22,22,22,1) 100%);
 	}
@@ -30,6 +31,7 @@
 		font-size:50pt;
 	}
 	
+	
 </style>
 
 <body>
@@ -38,6 +40,9 @@
 </p>
 
 <script>
+
+	function updateClock() {
+		
 	const NOON = 12;
 	let date = new Date();
 	let day = date.getDay();
@@ -49,13 +54,15 @@
 	let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	let ampm = hour < 12 ? "AM": "PM";
 	
-	
 	// Returns 12 Hour Clock 
 	
 	let clock = (hour < NOON ? hour: hour - NOON);
 	
 	document.getElementById("day").innerHTML = days[day];
-	document.getElementById("hour").innerHTML = clock + ":" +  minute  + "<small>" + ampm + "</small>";
+	document.getElementById("hour").innerHTML = clock + ": " +  minute  + "<small>" + ampm + "</small>";
+	setTimeout(updateClock,1000);
+	}
+	updateClock();
 	
 </script>
 
