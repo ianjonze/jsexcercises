@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Herons Formula</title>
+ 
+</head>
+<body>
+<style>
+    body{
+        font-family: helvetica;
+    }
+    
+    .main{
+        margin:200px;
+        padding:20px;
+        /*border-radius:1px;*/
+        /*border-style: solid;*/
+        /*Border-color:#000000;*/
+        background-color:#d9d9d9;
+    }
+    
+    p {
+        font-family: verdana;
+    }
+    
+</style>
+    <div class="main">
+        <H1>Area of a Triangle</H1>
+        
+        <p>Enter the length of Side 1</p>
+        <input type="number" id="side1" ><br>
+        <p>Enter the length of Side 2</p>
+        <input type="number" id="side2" ><br>
+        <p>Enter the length of Side 3</p>
+        <input type="number" id="side3" ><br><br>
+        <button onclick="heron()">Calculate Area</button>
+        
+        <p><span id="output"></span></p>
+    </div>
+
+<script type="text/javascript">
+
+    function heron() {
+    let x = parseFloat(document.getElementById("side1").value, 10);
+    let y = parseFloat(document.getElementById("side2").value, 10);
+    let z = parseFloat(document.getElementById("side3").value, 10);
+    
+    let s = (x + y + z) / 2;
+       
+    let answer = Math.sqrt(s*(s-x)*(s-y)*(s-z));
+      
+    if (isNaN(answer)) {
+        document.getElementById("output").innerHTML = "Please provide valid numeric values For all sides";
+    } else {
+       document.getElementById("output").innerHTML = "The area of the triangle is " + answer.toFixed(4);
+    }
+}
+</script>
+
+</body>
+</html>
